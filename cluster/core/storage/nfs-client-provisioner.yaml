@@ -11,10 +11,10 @@ spec:
   chart:
     spec:
       chart: nfs-subdir-external-provisioner
-      version: "1.2.x"
+      version: "4.0.14"
       sourceRef:
         kind: HelmRepository
-        name: helm-stable
+        name: nfs-subdir-external-provisioner
         namespace: flux-system
       interval: 1m
   values:
