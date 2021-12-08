@@ -72,4 +72,5 @@ spec:
         tls:
           - hosts:
               - "vaultwarden.${SECRET_DOMAIN}"
+            secretName: "vaultwarden-tls"
             #secretName: "${SECRET_CLUSTER_CERTIFICATE_DEFAULT}"
