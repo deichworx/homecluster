@@ -7,20 +7,31 @@ metadata:
   name: nfs-subdir-external-provisioner
   namespace: storage
 spec:
-  interval: 5m
+  interval: 1h
   chart:
     spec:
       chart: nfs-subdir-external-provisioner
-      version: "4.0.14"
+      version: 4.0.14
       sourceRef:
         kind: HelmRepository
         name: nfs-subdir-external-provisioner
         namespace: flux-system
-      interval: 1m
+      interval: 1h
   values:
     nfs:
       path: /volume2/nfs
       server: 192.168.178.88
+      mountOptions:
+        - nfsvers=4.2
+        - hard
+        - noac
+        - nocto
+        - noacl
+        - rsize=8192
+        - wsize=8192
+        - async
+        - retrans=3
+        - timeo=600
     storageClass:
-      defaultClass: false
-      name: "nfs-client"
+      defaultClass: true
+      provisionerName: k8s-sigs.io/nfs-subdir-external-provisioner
