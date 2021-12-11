@@ -45,7 +45,7 @@ spec:
       SHOPPING_MIN_AUTOSYNC_INTERVAL: "5"
     persistence:
       config:
-        enabled: false
+        enabled: true
         existingClaim: nfs-tandoor-pvc
       media:
         enabled: false
