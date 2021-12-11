@@ -54,20 +54,18 @@ spec:
         enabled: true
         type: emptyDir
         mountPath: /opt/recipes/staticfiles
-
     service:
       main:
         annotations:
           prometheus.io/probe: "true"
           prometheus.io/protocol: tcp
-
     ingress:
       main:
         enabled: true
         ingressClassName: "traefik"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
-          ajimari.io/enable: "true"
+          hajimari.io/enable: "true"
           hajimari.io/icon: "shield-half-full"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         hosts:
@@ -75,11 +73,6 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-              - path: /notifications/hub/negotiate
-                pathType: Prefix
-              - path: /notifications/hub
-                pathType: Prefix
-                servicePort: 3012
         tls:
           - hosts:
               - "tandoor.${SECRET_DOMAIN}"
