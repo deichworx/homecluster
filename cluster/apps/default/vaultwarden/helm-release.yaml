@@ -32,7 +32,7 @@ spec:
       SIGNUPS_ALLOWED: "true"
       WEBSOCKET_ENABLED: "true"
       SMTP_HOST: smtp.gmail.com
-      #SMTP_FROM: ${SECRET_SMTP_USERNAME}
+      SMTP_FROM: ${SECRET_SMTP_USERNAME}
       SMTP_FROM_NAME: vaultwarden
       SMTP_PORT: 465
       SMTP_SSL: "true"
