@@ -39,12 +39,10 @@ spec:
       SMTP_USERNAME: ${SECRET_SMTP_USERNAME}
       SMTP_PASSWORD: ${SECRET_VAULTWARDEN_SMTP_PASSWORD}
       SMTP_EXPLICIT_TLS: "true"
-
     persistence:
       config:
         enabled: true
         existingClaim: nfs-vaultwarden-pvc
-
     service:
       main:
         annotations:
