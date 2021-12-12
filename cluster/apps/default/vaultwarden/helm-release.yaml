@@ -32,7 +32,7 @@ spec:
       SIGNUPS_ALLOWED: "true"
       WEBSOCKET_ENABLED: "true"
       SMTP_HOST: smtp.gmail.com
-      SMTP_FROM: vaultwarden@${SECRET_CLUSTER_DOMAIN_ROOT}
+      SMTP_FROM: ${SECRET_SMTP_USERNAME}
       SMTP_FROM_NAME: vaultwarden
       SMTP_PORT: 465
       SMTP_SSL: "true"
@@ -57,7 +57,7 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           hajimari.io/enable: "true"
-          hajimari.io/icon: "chef-hat"
+          hajimari.io/icon: "shield-half-full"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         hosts:
           - host: "vaultwarden.${SECRET_DOMAIN}"
