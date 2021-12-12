@@ -33,11 +33,12 @@ spec:
       WEBSOCKET_ENABLED: "true"
       SMTP_HOST: smtp.gmail.com
       SMTP_FROM: ${SECRET_SMTP_USERNAME}
-      SMTP_FROM_NAME: vaultwarden
-      SMTP_PORT: 465
+      SMTP_FROM_NAME: Holger Brinkmann
+      SMTP_PORT: 587
       SMTP_SSL: "true"
       SMTP_USERNAME: ${SECRET_SMTP_USERNAME}
       SMTP_PASSWORD: ${SECRET_VAULTWARDEN_SMTP_PASSWORD}
+      SMTP_EXPLICIT_TLS: "true"
 
     persistence:
       config:
