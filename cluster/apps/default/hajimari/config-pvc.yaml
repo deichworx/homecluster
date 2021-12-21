@@ -21,6 +21,7 @@ spec:
     storage: 128Mi
   accessModes:
     - ReadWriteOnce
+  storageClassName: nfs-client
   nfs:
     path: /volume2/nfs/hajimari
     server: 192.168.178.88
