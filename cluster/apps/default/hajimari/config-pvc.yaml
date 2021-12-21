@@ -10,15 +10,19 @@ spec:
   resources:
     requests:
       storage: 128Mi
-  volumeName: hajimari-pv
+  volumeName: hajimari-nfs-pv
 ---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: hajimari-pv
+  name: hajimari-nfs-pv
 spec:
   capacity:
     storage: 128Mi
   accessModes:
     - ReadWriteOnce
-  storageClassName: nfs-client
+  nfs:
+    path: /volume2/nfs/hajimari
+    server: 192.168.178.88
+  mountOptions:
+    - nfsvers=4.2
