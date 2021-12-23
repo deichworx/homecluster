@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: tandoor-recipes-media
+  name: recipes-media
   namespace: default
   #labels:
   # kasten-io-snapshots: "enable"
@@ -17,7 +17,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: tandoor-recipes-static
+  name: recipes-static
   namespace: default
   #labels:
   # kasten-io-snapshots: "enable"
