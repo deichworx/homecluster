@@ -49,7 +49,7 @@ spec:
         existingClaim: nfs-tandoor-pvc
       media:
         enabled: false
-        mountPath: /opt/recipes/mediafiles/recipes
+        mountPath: /opt/recipes/mediafiles
       static:
         enabled: true
         type: emptyDir
