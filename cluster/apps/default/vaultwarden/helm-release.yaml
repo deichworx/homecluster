@@ -31,14 +31,14 @@ spec:
       DATA_FOLDER: "data"
       SIGNUPS_ALLOWED: "true"
       WEBSOCKET_ENABLED: "true"
-      #SMTP_HOST: smtp.gmail.com
-      #SMTP_FROM: ${SECRET_SMTP_USERNAME}
-      #SMTP_FROM_NAME: Holger Brinkmann
-      #SMTP_PORT: 587
-      #SMTP_SSL: "true"
-      #SMTP_USERNAME: ${SECRET_SMTP_USERNAME}
-      #SMTP_PASSWORD: ${SECRET_VAULTWARDEN_SMTP_PASSWORD}
-      #SMTP_EXPLICIT_TLS: "true"
+      SMTP_HOST: smtp.gmail.com
+      SMTP_FROM: ${SECRET_SMTP_USERNAME}
+      SMTP_FROM_NAME: "Holger Brinkmann"
+      SMTP_PORT: 587
+      SMTP_SSL: "true"
+      SMTP_USERNAME: ${SECRET_SMTP_USERNAME}
+      SMTP_PASSWORD: ${SECRET_VAULTWARDEN_SMTP_PASSWORD}
+      SMTP_EXPLICIT_TLS: "false"
     persistence:
       config:
         enabled: true
