@@ -41,6 +41,8 @@ spec:
         # @default -- 80
         port: 8081
         ingress:
+          enabled: true
+          ingressClassName: "traefik"
           # -- Provide additional annotations which may be required
           annotations:
             cert-manager.io/cluster-issuer: "letsencrypt-production"
