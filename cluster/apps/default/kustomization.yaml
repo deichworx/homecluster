@@ -4,4 +4,3 @@ resources:
   - hajimari
   - vaultwarden
   - tandoor
-  - reverse-proxy
