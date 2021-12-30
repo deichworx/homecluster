@@ -19,7 +19,7 @@ spec:
     generateTLS:
       # -- Enable automatic generation of ingress TLS section
       # based on ingress.hosts.*.host
-      enabled: false
+      enabled: true
       # -- certificate to use
       # @default -- default ingress TLS certificate
       secretName: ""
@@ -53,13 +53,13 @@ spec:
           # if not set the generateTLS settigs are used
           tls:
             - hosts:
-                - abc.deichworx.de
+                - "abc.${SECRET_DOMAIN}"
               secretName: abc-tls
           hosts:
-            - host: abc.deichworx.de
-              # -- Path.  Helm template can be passed
-              # @default -- /
-              path: /
+            - host: "abc.${SECRET_DOMAIN}"
+              paths:
+                - path: /
+                  pathType: Prefix
 
     ingressPort:
       # -- Ingress port for non-TLS
