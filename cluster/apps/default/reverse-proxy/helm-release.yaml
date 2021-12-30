@@ -41,25 +41,26 @@ spec:
         # @default -- 80
         port: 8081
         ingress:
-          enabled: true
-          ingressClassName: "traefik"
-          # -- Provide additional annotations which may be required
-          annotations:
-            cert-manager.io/cluster-issuer: "letsencrypt-production"
-            hajimari.io/enable: "true"
-            hajimari.io/icon: "weather-sunset"
-            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          # -- Configure TLS for the ingress. Both secretName and hosts can process a Helm template.
-          # if not set the generateTLS settigs are used
-          tls:
-            - hosts:
-                - abc.deichworx.de
-              secretName: abc-tls
-          hosts:
-            - host: abc.deichworx.de
-              # -- Path.  Helm template can be passed
-              # @default -- /
-              path: /
+          main:
+            enabled: true
+            ingressClassName: "traefik"
+            # -- Provide additional annotations which may be required
+            annotations:
+              cert-manager.io/cluster-issuer: "letsencrypt-production"
+              hajimari.io/enable: "true"
+              hajimari.io/icon: "weather-sunset"
+              traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+            # -- Configure TLS for the ingress. Both secretName and hosts can process a Helm template.
+            # if not set the generateTLS settigs are used
+            tls:
+              - hosts:
+                  - abc.deichworx.de
+                secretName: abc-tls
+            hosts:
+              - host: abc.deichworx.de
+                # -- Path.  Helm template can be passed
+                # @default -- /
+                path: /
 
     ingressPort:
       # -- Ingress port for non-TLS
