@@ -19,7 +19,7 @@ spec:
     generateTLS:
       # -- Enable automatic generation of ingress TLS section
       # based on ingress.hosts.*.host
-      enabled: true
+      enabled: false
       # -- certificate to use
       # @default -- default ingress TLS certificate
       secretName: ""
