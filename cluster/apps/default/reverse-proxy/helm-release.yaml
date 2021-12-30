@@ -54,10 +54,10 @@ spec:
           # if not set the generateTLS settigs are used
           tls:
             - hosts:
-                - "nexus.${SECRET_DOMAIN}"
+                - "nexus.dev.${SECRET_DOMAIN}"
               secretName: nexus-tls
           hosts:
-            - host: "nexus.${SECRET_DOMAIN}"
+            - host: "nexus.dev.${SECRET_DOMAIN}"
               paths:
                 - path: /
                   pathType: Prefix
