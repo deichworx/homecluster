@@ -17,12 +17,12 @@ spec:
       interval: 5m
 
       generateTLS:
-      # -- Enable automatic generation of ingress TLS section
-      # based on ingress.hosts.*.host
-      enabled: true
-      # -- certificate to use
-      # @default -- default ingress TLS certificate
-      secretName: ""
+        # -- Enable automatic generation of ingress TLS section
+        # based on ingress.hosts.*.host
+        enabled: true
+        # -- certificate to use
+        # @default -- default ingress TLS certificate
+        secretName: ""
       instances:
         - name: nexus
           # -- enable this reverse proxy.
