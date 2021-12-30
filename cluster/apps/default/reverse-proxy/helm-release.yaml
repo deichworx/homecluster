@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: reverse-proxy
+  name: nexus-reverse-proxy
   namespace: default
 spec:
   interval: 5m
@@ -42,7 +42,11 @@ spec:
         port: 8081
         ingress:
           # -- Provide additional annotations which may be required
-          annotations: {}
+          annotations:
+            cert-manager.io/cluster-issuer: "letsencrypt-production"
+            hajimari.io/enable: "true"
+            hajimari.io/icon: "weather-sunset"
+            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           # -- Configure TLS for the ingress. Both secretName and hosts can process a Helm template.
           # if not set the generateTLS settigs are used
           tls:
@@ -61,10 +65,10 @@ spec:
       # -- Ingress port for TLS
       tls: 443
 
-  #connectionTest:
-  # -- seconds to wait before next retry
-  #  waitretry: 2
-  # -- second to wait in case no data is received and then try again
-  #  readtimeout: 2
-  #   # -- tries to connect
-  # tries: 30
+    connectionTest:
+      # -- seconds to wait before next retry
+      waitretry: 2
+      # -- second to wait in case no data is received and then try again
+      readtimeout: 2
+      #   # -- tries to connect
+      tries: 30
