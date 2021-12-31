@@ -124,7 +124,7 @@ spec:
           tls:
             - hosts:
                 - "drive.${SECRET_DOMAIN}"
-              secretName: portainer-tls
+              secretName: drive-tls
           hosts:
             - host: "drive.${SECRET_DOMAIN}"
               paths:
