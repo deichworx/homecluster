@@ -130,6 +130,41 @@ spec:
               paths:
                 - path: /
                   pathType: Prefix
+      - name: keyloak
+        # -- enable this reverse proxy.
+        # @default -- true
+        enabled: true
+        # -- add a test for this reverse proxy.
+        # It can be tested with `helm test <chart_name>`
+        # @default -- true
+        test: true
+        # -- host name behind this reverse proxy
+        externalName: hades.fritz.box
+        # -- IP address behind this reverse proxy
+        # Has no effect if externalName is set
+        #ip: 192.168.1.1
+        # -- Port used by host behind this reverse proxy
+        # @default -- 80
+        port: 8888
+        ingress:
+          enabled: true
+          # -- Provide additional annotations which may be required
+          annotations:
+            cert-manager.io/cluster-issuer: "letsencrypt-production"
+            hajimari.io/enable: "true"
+            hajimari.io/icon: "file-multiple"
+            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+          # -- Configure TLS for the ingress. Both secretName and hosts can process a Helm template.
+          # if not set the generateTLS settigs are used
+          tls:
+            - hosts:
+                - "keycloak.${SECRET_DOMAIN}"
+              secretName: keycloak-tls
+          hosts:
+            - host: "keycloak.${SECRET_DOMAIN}"
+              paths:
+                - path: /
+                  pathType: Prefix
     ingressPort:
       # -- Ingress port for non-TLS
       http: 80
