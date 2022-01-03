@@ -69,7 +69,7 @@ spec:
         # @default -- true
         test: true
         # -- host name behind this reverse proxy
-        externalName: "${SECRET_SYNO_DNS}"
+        externalName: ${SECRET_SYNO_DNS}
         # -- IP address behind this reverse proxy
         # Has no effect if externalName is set
         #ip: 192.168.1.1
