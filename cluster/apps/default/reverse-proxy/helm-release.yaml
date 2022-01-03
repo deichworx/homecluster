@@ -34,7 +34,7 @@ spec:
         # @default -- true
         test: true
         # -- host name behind this reverse proxy
-        externalName: hades.fritz.box
+        externalName: "${SECRET_SYNO_DNS}"
         # -- IP address behind this reverse proxy
         # Has no effect if externalName is set
         #ip: 192.168.1.1
@@ -69,7 +69,7 @@ spec:
         # @default -- true
         test: true
         # -- host name behind this reverse proxy
-        externalName: hades.fritz.box
+        externalName: "${SECRET_SYNO_DNS}"
         # -- IP address behind this reverse proxy
         # Has no effect if externalName is set
         #ip: 192.168.1.1
@@ -104,7 +104,7 @@ spec:
         # @default -- true
         test: true
         # -- host name behind this reverse proxy
-        externalName: hades.fritz.box
+        externalName: "${SECRET_SYNO_DNS}"
         # -- IP address behind this reverse proxy
         # Has no effect if externalName is set
         #ip: 192.168.1.1
@@ -139,7 +139,7 @@ spec:
         # @default -- true
         test: true
         # -- host name behind this reverse proxy
-        externalName: hades.fritz.box
+        externalName: "${SECRET_SYNO_DNS}"
         # -- IP address behind this reverse proxy
         # Has no effect if externalName is set
         #ip: 192.168.1.1
@@ -158,10 +158,10 @@ spec:
           # if not set the generateTLS settigs are used
           tls:
             - hosts:
-                - "keycloak.${SECRET_DOMAIN}"
+                - "auth.${SECRET_DOMAIN}"
               secretName: keycloak-tls
           hosts:
-            - host: "keycloak.${SECRET_DOMAIN}"
+            - host: "auth.${SECRET_DOMAIN}"
               paths:
                 - path: /
                   pathType: Prefix
