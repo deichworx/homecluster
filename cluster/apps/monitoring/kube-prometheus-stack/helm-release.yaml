@@ -87,7 +87,7 @@ spec:
         storage:
           volumeClaimTemplate:
             spec:
-              storageClassName: "nfc-client"
+              storageClassName: "nfs-client"
               resources:
                 requests:
                   storage: 1Gi
